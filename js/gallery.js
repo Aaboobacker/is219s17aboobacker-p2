@@ -57,6 +57,29 @@ var mJson;
 var mUrl = 'insert_url_here_to_image_json';
 
 
+mRequest.onreadystatechange = function() { 
+	
+	if (mRequest.readyState == 4 && mRequest.status == 200) {
+	try { 
+		mJson = JSON.parse(mRequest.responseText);
+		console.log(mJson);
+			
+	for(var i=0; i < mJson.images.length;i++)
+		{
+            var slide = mJson.images[i];
+			mImages.push(new GalleryImage(slide.imgLoc,slide.descrip,slide.date,slide.imgPath));
+		}
+		console.log(mImages);
+		} catch(err) { 
+			console.log(err.message);
+		} 
+	} 
+}; 
+
+mRequest.open("GET", mUrl, true);
+mRequest.send();
+
+
 //You can optionally use the following function as your event callback for loading the source of Images from your json data (for HTMLImageObject).
 //@param A GalleryImage object. Use this method for an event handler for loading a gallery Image object (optional).
 function makeGalleryImageOnloadCallback(galleryImage) {
