@@ -79,12 +79,12 @@ var mUrl;
 
  if($_GET["json"] == undefined){
 	
-	mUrl = "images.json";
-	console.log(mUrl);
+	mUrl = "images-short.json";
+	//console.log(mUrl);
    }
  else {
 	mUrl = $_GET["json"];
-	console.log(mUrl);
+	//console.log(mUrl);
  }	
 
 
