@@ -32,50 +32,12 @@ function animate() {
 
 /************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
 
-
-function getQueryParams(qs) {
- qs = qs.split("+").join(" ");
- var params = {},
- tokens,
- re = /[?&]?([^=]+)=([^&]*)/g;
- while (tokens = re.exec(qs)) {
- params[decodeURIComponent(tokens[1])]
- = decodeURIComponent(tokens[2]);
- }
- return params;
-}
-var $_GET = getQueryParams(document.location.search);
-console.log($_GET["fname"]); // would output "John"
-
-
-var mURL = “images.json”;
-var mRequest = new XMLHttpRequest();
-mRequest.onreadystatechange = function() {
-// Do something interesting if file is opened successfully
-if (mRequest.readyState == 4 && mRequest.status == 200) {
-try {
-// Let’s try and see if we can parse JSON
-mJson = JSON.parse(mRequest.responseText);
-// Let’s print out the JSON; It will likely show as “obj”
-console.log(mJson);
-} catch(err) {
-console.log(err.message)
-}
-}
-};
-mRequest.open("GET",mURL, true);
-mRequest.send();
-
-
-
 function swapPhoto() {
 	//Add code here to access the #slideShow element.
 	//Access the img element and replace its source
 	//with a new image from your images array which is loaded 
 	//from the JSON string
 	console.log('swap photo');
-	
-	$('#photo').attr("src",mImages(0).imgPath)
 }
 
 // Counter for the mImages array
@@ -109,11 +71,6 @@ $(document).ready( function() {
 	// This initially hides the photos' metadata information
 	$('.details').eq(0).hide();
 	
-	//Have the more indicator clickable
-	//$('.moreindicator').click function(){
-		//console.log("Click");
-	//}
-	
 });
 
 window.addEventListener('load', function() {
@@ -122,10 +79,12 @@ window.addEventListener('load', function() {
 
 }, false);
 
-function GalleryImage() {
-	//implement me as an object to hold the following data about an image:
-	//1. location where photo was taken
-	//2. description of photo
-	//3. the date when the photo was taken
-	//4. either a String (src URL) or an an HTMLImageObject (bitmap of the photo. https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement)
+// PART 1 -- Created a Javascript Object
+
+function GalleryImage(imgLoc, descrip, date, imgPath) {
+	
+	this.imgLocation = imgLoc;
+	this.description = descrip;
+	this.date = date;
+	this.imgPath = imgPath;	
 }
