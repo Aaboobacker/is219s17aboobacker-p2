@@ -32,6 +32,8 @@ function animate() {
 
 /************* DO NOT TOUCH CODE ABOVE THIS LINE ***************/
 
+var mCurrentIndex = 0;
+
 function swapPhoto() {
 		 if(mCurrentIndex < 0){
 		mCurrentIndex += mImages.length;
@@ -62,7 +64,6 @@ function getQueryParams(qs) {
 
 var $_GET = getQueryParams(document.location.search);
 
-var mCurrentIndex = 0;
 
 // XMLHttpRequest variable
 var mRequest = new XMLHttpRequest();
@@ -80,11 +81,11 @@ var mUrl;
  if($_GET["json"] == undefined){
 	
 	mUrl = "images-short.json";
-	//console.log(mUrl);
+	console.log(mUrl);
    }
  else {
 	mUrl = $_GET["json"];
-	//console.log(mUrl);
+	console.log(mUrl);
  }	
 
 
@@ -155,10 +156,11 @@ window.addEventListener('load', function() {
 
 // PART 1 -- Created a Javascript Object
 
-function GalleryImage(imgLoc, descrip, date, imgPath) {
+function GalleryImage(imgLocation, description, date, imgPath) {
 	
 	this.imgLocation = imgLocation;
 	this.description = description;
 	this.date = date;
 	this.imgPath = imgPath;	
 }
+
