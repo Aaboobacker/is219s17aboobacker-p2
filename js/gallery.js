@@ -50,7 +50,18 @@ function swapPhoto() {
 	console.log('swap photo');
 	
 }
-// Counter for the mImages array
+
+function getQueryParams(qs) {
+	qs = qs.split("+").join(" ");
+	var params = {}, tokens, re = /[?&]?([^=]+)=([^&]*)/g;
+	while (tokens = re.exec(qs)) {
+		params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+	}
+	return params;
+}
+
+var $_GET = getQueryParams(document.location.search);
+
 var mCurrentIndex = 0;
 
 // XMLHttpRequest variable
@@ -78,7 +89,7 @@ mRequest.onreadystatechange = function() {
 	for(var i=0; i < mJson.images.length;i++)
 		{
             var slide = mJson.images[i];
-			mImages.push(new GalleryImage(slide.imgLoc,slide.descrip,slide.date,slide.imgPath));
+			mImages.push(new GalleryImage(slide.imgLocation,slide.description,slide.date,slide.imgPath));
 		}
 		console.log(mImages);
 		} catch(err) { 
