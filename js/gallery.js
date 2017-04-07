@@ -98,8 +98,8 @@ mRequest.onreadystatechange = function() {
 			
 	for(var i=0; i < mJson.images.length;i++)
 		{
-            var slide = mJson.images[i];
-			mImages.push(new GalleryImage(slide.imgLocation,slide.description,slide.date,slide.imgPath));
+            var myline = mJson.images[i];
+			mImages.push(new GalleryImage(myline.imgLocation,myline.description,myline.date,myline.imgPath));
 		}
 		console.log(mImages);
 		} catch(err) { 
