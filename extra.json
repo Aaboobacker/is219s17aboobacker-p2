@@ -1,0 +1,39 @@
+{
+    "images": [
+        {
+            "imgPath": "img/places/nyc.jpg",
+            "imgLocation": "NYC",
+            "description": "Longest building in the World",
+            "date": "Yet to be built"
+        },
+		
+		 {
+            "imgPath": "img/places/shangai.jpg",
+            "imgLocation": "Shangai",
+            "description": "One of the tallest towers",
+            "date": "04/04/2011"
+        },
+		
+		 {
+            "imgPath": "img/places/dubai.jpg",
+            "imgLocation": "Dubai",
+            "description": "Burj-Al-Arab - Hotel",
+            "date": "01/01/2008"
+        },
+		
+		 {
+            "imgPath": "img/places/miami.jpg",
+            "imgLocation": "Miami",
+            "description": "Skyscraper",
+            "date": "Yet to be built"
+        },
+		
+		 {
+            "imgPath": "img/places/burj.jpg",
+            "imgLocation": "Dubai",
+            "description": "Burj Khalifa -Tallest Tower in the World",
+            "date": "0/02/2014"
+        },
+       
+  ]
+}
