@@ -113,6 +113,26 @@ function makeGalleryImageOnloadCallback(galleryImage) {
 
 $(document).ready( function() {
 	
+	$('.details').eq(0).hide();
+	
+	$(".moreIndicator").click(function(){
+		$("img.rot90").toggleClass("rot270",3000);
+		$(".details").slideToggle(1000);
+	});
+		$("#nextPhoto").click(function(){
+			swapPhoto();
+		});
+		
+		$("#prevPhoto").click(function(){	
+			mCurrentIndex -= 2;
+			swapPhoto();
+			console.log(mCurrentIndex);
+});
+
+
+});
+$(document).ready( function() {
+	
 	// This initially hides the photos' metadata information
 	$('.details').eq(0).hide();
 	
