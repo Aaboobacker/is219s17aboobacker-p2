@@ -80,7 +80,7 @@ var mUrl;
 
  if($_GET["json"] == undefined){
 	
-	mUrl = "images-short.json";
+	mUrl = "images.json";
 	console.log(mUrl);
    }
  else {
@@ -141,6 +141,7 @@ $(document).ready( function() {
 
 
 });
+
 $(document).ready( function() {
 	
 	// This initially hides the photos' metadata information
