@@ -80,7 +80,7 @@ var mUrl;
 
  if($_GET["json"] == undefined){
 	
-	mUrl = "images.json";
+	mUrl = "extra.json";
 	console.log(mUrl);
    }
  else {
