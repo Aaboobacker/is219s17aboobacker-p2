@@ -37,6 +37,8 @@ body {
 	opacity: .8;
 	top: 400px;
 	left: 300px;
+	-webkit-transform: rotate(-90deg); 
+    -moz-transform: rotate(-90deg); 
 }
 
 .thumbnail {
@@ -60,11 +62,19 @@ body {
 	width: 42px;
 }
 
+#prevPhoto:hover{
+	opacity: 0.8;
+}
+
 #nextPhoto {
 	height: 42px;
 	width: 42px;
 	position: relative;
 	left: 560px;
+}
+
+#nextPhoto:hover{
+	opacity: 0.8;
 }
 
 .details p {
